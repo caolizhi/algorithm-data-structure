@@ -2,6 +2,8 @@ package top.caolizhi.example.algorithm.sort;
 
 import java.util.Arrays;
 
+import static top.caolizhi.example.algorithm.utils.SortUtils.sortSwapUtil;
+
 /**
  *  选择排序
  *  1.找到数组中最小的那个元素，将它和数组的第一个元素交换位置，如果第一个元素就是最小元素，那么它就和自己交换；
@@ -19,14 +21,8 @@ public class SelectionSort {
                     min = j;
                 }
             }
-            swap(elementArray, i, min);
+            sortSwapUtil(elementArray, i, min);
         }
-    }
-
-    private static void swap(int[] array, int i, int j) {
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
     }
 
     public static void main(String[] args) {
