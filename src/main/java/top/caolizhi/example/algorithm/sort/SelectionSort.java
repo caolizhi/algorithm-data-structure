@@ -13,19 +13,20 @@ public class SelectionSort {
     public static void sort(int[] elementArray) {
 
         for (int i = 0; i < elementArray.length; i++) {
+            int min = i;
             for (int j = i+1; j < elementArray.length; j++) {
-                if (elementArray[j] < elementArray[i]) {
-                    swap(elementArray, i, j);
+                if (elementArray[j] < elementArray[min]) {
+                    min = j;
                 }
             }
+            swap(elementArray, i, min);
         }
-
     }
 
     private static void swap(int[] array, int i, int j) {
-        int temp = array[j];
-        array[j] = array[i];
-        array[i] = temp;
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 
     public static void main(String[] args) {
