@@ -1,7 +1,6 @@
 package top.caolizhi.example.algorithm.sort;
 
-import java.util.Arrays;
-
+import static top.caolizhi.example.algorithm.utils.GenerateRandomArrayUtil.*;
 import static top.caolizhi.example.algorithm.utils.SortUtils.sortSwapUtil;
 
 /**
@@ -41,13 +40,29 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        int[] array = new int[]{1,4,3,2,7,2,9,5,3};
-        int[] array1 = new int[]{1,4,3,2,7,2,9,5,3};
-        BubbleSort.sort(array);
-        BubbleSort.sort1(array1);
-        Arrays.stream(array).forEach(System.out::print);
-        System.out.println();
-        Arrays.stream(array1).forEach(System.out::print);
+        int testTime = 500000;
+        int maxSize = 100;
+        int maxValue = 100;
+        boolean success = true;
+        for (int i = 0; i < testTime; i++) {
+            int[] arr1 = generateRandomArray(maxSize, maxValue);
+            int[] arr2 = copyArray(arr1);
+            // todo sort
+            BubbleSort.sort(arr1);
+            comparator(arr2);
+            if (!isEqual(arr1, arr2)) {
+                success = false;
+                printArray(arr1);
+                printArray(arr2);
+                break;
+            }
+        }
+        System.out.println(success ? "Nice !" : "Fucking Fucked !");
+
+        int[] arr = generateRandomArray(maxSize, maxValue);
+        printArray(arr);
+        SelectionSort.sort(arr);
+        printArray(arr);
     }
 
 

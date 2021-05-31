@@ -8,7 +8,7 @@ public class SortUtils {
             array[j] = temp;
     }
 
-    public static void sortBitSwapUtil(int[] array, int i, int j) {
+    public static void xorArraySwapUtil(int[] array, int i, int j) {
         array[i] = array[i] ^ array[j];
         array[j] = array[i] ^ array[j];
         array[i] = array[i] ^ array[j];
