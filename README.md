@@ -25,3 +25,9 @@ learn algorithms
 ![img.png](images/quick_sort_1.0.png)
 ### 快排3.0 （随机快排）|
 ![img.png](images/quick_sort_random.png)
+
+## 堆
+### 堆结构
+![img.png](images/heap.png)
+### 堆排序
+![img.png](images/heap_sort.png)
